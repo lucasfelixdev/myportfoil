@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root{
-    --CorBackground-Primay: #141414;
+    --CorBackground-Primay: rgb(20, 20, 20);
     --color-primary: #00f0c8;
     --color-secundary: #10737a;
     --color-white: #ffffff;
     --color-whitegray: #a9a9a9;
+    --color-whitegray2: rgb(33, 33, 33);
     --tamanho-max: 1140px;
 }
 
@@ -15,7 +16,9 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+h1,h2,h3,h4{
+    margin: 0;
+}
 body{
     overflow-x: hidden;
     font-family: 'Outfit', sans-serif;
@@ -99,10 +102,23 @@ transition: width .5s cubic-bezier(0.86, 0, 0.07, 1);
     width: 100%; /* Alterado para 100% ao passar o mouse */
 }
 
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(100px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
 
 /* ---- main ---- */
-.s-home__container{
-    min-height: 100vh;
+main{
+    margin-top: 0px;
+}
+.s-grid__container{
     max-width: var(--tamanho-max);
     background-color: var(--CorBackground-Primay);
     margin-top: 100px;
@@ -111,16 +127,17 @@ transition: width .5s cubic-bezier(0.86, 0, 0.07, 1);
 }
 .container__home{
     display: flex;
+    margin-top: 100px;
     align-items: center;
-    min-height: 90vh;
-    padding: 200px 0px;
+    min-height: calc(100vh + 100px - 14rem);
+    /* padding: 250px 0px; */
     overflow: hidden;
     width: 100%;
 }
 .s-home__container-text h1{
     color:var(--color-white);
-    font-size: 40px;
-    max-width: 650px;
+    font-size: 45px;
+    max-width: 680px;
     font-weight: 400;
 }
 
@@ -129,13 +146,15 @@ transition: width .5s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 .s-home__container-text p{
+    
     color: var(--color-whitegray);
-    font-size: 18px;
+    font-size: 20px;
     max-width: 600px;
-    margin: 40px 0px;
-    font-weight: 300;
-    line-height: 160%;
+    height: 70px;
+    margin: 40px 0px;  
 }
+
+
 
 .paragrafo:after {
     content: "|";
@@ -157,21 +176,119 @@ transition: width .5s cubic-bezier(0.86, 0, 0.07, 1);
     }
 }
 
-
-
-
 .logoStroke {
     position: absolute;
-    right: -50px;
-    top: 46%;
-    transform: translate(0%, -48%);
+    right: -28px;
+    top: 48%;
+    transform: translate(0%, -38%);
 }
 .logoStroke img{
-    height: 480px;
+    height: 400px;
 }
 
+/* ------------ ABOUT ME ------------ */
 #s-about{
-    height: 100vh;
-    background-color: #17161d;
+    height: 50em;
+}
+#s-about .s-grid__container>div{
+    flex-wrap: wrap;
+    background-color: #151515;
+    border: 2px solid #1f1f1f;
+    padding: 24px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+}
+
+.s-about__infos{
+    flex-wrap: wrap;
+    width: 47%;
+}
+.s-about__infos h4{
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.s-about__infos h2{
+    margin: 10px 0;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+
+.s-about__infos h3{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+
+.s-about__infos p{
+    color: var(--color-whitegray);
+    margin: 32px 0px 48px 0px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
     width: 100%;
+}
+
+
+#s-about .s-grid__container .s-about__img{
+    width: 47%;
+    background-image: url(../img/quem-sou-eu-photo1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 4px;
+    height: 500px;
+}
+
+.s-about__iconsSocial ul, li, a{
+    list-style: none;
+    text-decoration: none;
+}
+
+.s-about__iconsSocial ul {
+    display: flex;
+    gap: 40px;
+}
+
+.s-about__iconsSocial a {
+    padding: 16px;
+    background-color: var(--CorBackground-Primay);
+    border: var(--color-whitegray2) 2px solid;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+
+.s-about__iconsSocial a:hover {
+    padding: 16px;
+    background-color: var(--CorBackground-Primay);
+    border: var(--color-primary) 2px solid;
+    border-radius: 10px;
+}
+
+@media (max-width: 1345px) {
+    .logoStroke{
+        display: none;
+    }
+
+    .container__home{
+       justify-content: center; 
+    }
+
+    #s-about .s-grid__container>div{
+        flex-wrap: wrap; 
+        gap: 32px   
+    }
+    #s-about .s-grid__container .s-about__img, .s-about__infos{
+        width: 100%;
+    }
+    
+    .s-about__iconsSocial>ul{
+        flex-wrap: wrap;
+        gap: 16px;
+    }
 }
