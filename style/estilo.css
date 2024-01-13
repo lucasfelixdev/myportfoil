@@ -322,6 +322,9 @@ main{
     height: auto;
 }
 
+.card-top{
+    visibility: hidden;
+}
 .ArticleClass  h3{
     font-size: 27px;
     font-weight: 400;
