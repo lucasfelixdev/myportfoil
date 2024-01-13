@@ -123,8 +123,13 @@ main{
     background-color: var(--CorBackground-Primay);
     margin-top: 100px;
     margin: auto;
+}
+
+#s-home{
+    margin: 0 auto;
     width: 80%;
 }
+
 .container__home{
     display: flex;
     margin-top: 100px;
@@ -135,8 +140,10 @@ main{
     width: 100%;
 }
 .s-home__container-text h1{
+    position: relative;
+    z-index: 1;
     color:var(--color-white);
-    font-size: 45px;
+    font-size: clamp(2.3em, 1.4em + 1.8vw, 3.2em);
     max-width: 680px;
     font-weight: 400;
 }
@@ -146,9 +153,9 @@ main{
 }
 
 .s-home__container-text p{
-    
+    font-weight: 300;
     color: var(--color-whitegray);
-    font-size: 20px;
+    font-size: clamp(1.3em, 0.3em + 1vw, 1.25em);
     max-width: 600px;
     height: 70px;
     margin: 40px 0px;  
@@ -189,6 +196,9 @@ main{
 /* ------------ ABOUT ME ------------ */
 #s-about{
     height: 50em;
+    margin: 0 auto;
+    height: 50em;
+    width: 94%;
 }
 #s-about .s-grid__container>div{
     flex-wrap: wrap;
@@ -270,6 +280,44 @@ main{
     border-radius: 10px;
 }
 
+
+
+#s-projects{
+    height: 100vh;
+    background-color: #ccece6;
+    display: flex;
+}
+#test{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-secundary);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 2400px) {
+    .container__nav {
+        width: 60%;
+    }
+
+    .logoStroke {
+        position: absolute;
+        /* left: -3200px; */
+        top: 44%;
+        transform: translate(-170%, -35%);
+    }
+}
+
 @media (max-width: 1345px) {
     .logoStroke{
         display: none;
@@ -291,4 +339,90 @@ main{
         flex-wrap: wrap;
         gap: 16px;
     }
+}
+
+@media (max-width: 500px){
+    .s-home__container-text h1, .s-home__container-text p{
+        text-align: center;
+    }
+
+    #s-about .s-grid__container .s-about__img {
+        height: 350px;
+    }
+
+    /* // MENU BURGUER */
+    header nav{
+        display: none;
+    }
+
+    .one,
+    .two,
+    .three{ /* Monta o traçado para o menu burguer */
+        background-color: #bbbbbb; 
+        height: 1.5px;
+        width: 100%;
+        margin: 8px;
+        transition-duration: 0.3s;
+     }
+
+    .menu-toggle{ /* Ativa o menu toggle */
+        padding-right: 1px;
+        width: 35px;  
+        height: 23.3px; 
+     }
+
+     .container__responsividade.on{
+        transition: 0.8s ease-in-out;
+        position: absolute;
+        top:0;
+        left:0;
+        
+        width: 100vw;
+        height: 100vh;
+
+        background-color: #1c1c1c;
+        
+        z-index: 10;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container__responsividade.on nav {
+        display: block;
+    }
+
+    .container__responsividade.on .menu-toggle {
+        position: absolute;
+        right: 53px;
+        top: 38px;
+    }
+    
+    .container__responsividade.on .menu-toggle .two { /* "Removendo um dos traçados" */
+        opacity: 0;
+    }
+
+    .container__responsividade.on .menu-toggle .three { /* Completando o X */
+        
+        background-color: #ffffff !important;
+        transform: rotate(-48deg) translate(8.5px, -7.1px);
+    }
+
+    .container__responsividade.on .menu-toggle .one { /* Monta o X para o menu burguer */
+        transform: rotate(43deg) translate(4px, 6px);
+        background-color: #ffffff !important;
+    }
+   
+    .container__responsividade.on .menu-toggle .two { /* "Removendo um dos traçados" */
+        opacity: 0;
+    }
+
+    .container__responsividade.on .nav__items{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
 }
