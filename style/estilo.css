@@ -10,6 +10,9 @@
     --tamanho-max: 1140px;
 }
 
+html{
+    scroll-behavior: smooth;
+}
 
 *{
     padding: 0;
@@ -122,17 +125,18 @@ main{
     max-width: var(--tamanho-max);
     background-color: var(--CorBackground-Primay);
     margin-top: 100px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 #s-home{
+    padding-top: 100px;
     margin: 0 auto;
     width: 80%;
 }
 
 .container__home{
     display: flex;
-    margin-top: 100px;
+    
     align-items: center;
     min-height: calc(100vh + 100px - 14rem);
     /* padding: 250px 0px; */
@@ -148,7 +152,7 @@ main{
     font-weight: 400;
 }
 
-.s-home__container-text h1 span{
+.s-home__container-text h1 span, span{
     color:var(--color-primary);
 }
 
@@ -195,11 +199,11 @@ main{
 
 /* ------------ ABOUT ME ------------ */
 #s-about{
-    height: 50em;
     margin: 0 auto;
-    height: 50em;
     width: 94%;
+    padding: 72px 0px;
 }
+
 #s-about .s-grid__container>div{
     flex-wrap: wrap;
     background-color: #151515;
@@ -283,21 +287,83 @@ main{
 
 
 #s-projects{
-    height: 100vh;
-    background-color: #ccece6;
-    display: flex;
-}
-#test{
-    display: flex;
-    width: 100px;
-    height: 100px;
-    background-color: var(--color-secundary);
+    padding: 96px 48px;
+    text-align: center;
 }
 
+#s-projects h2{
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: -1px;
+
+    padding-bottom: 24px
+}
+
+#projects{
+    margin: 24px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    text-align: left;
+}
 
 
+.ArticleClass{
+    
+    height: auto;
+    padding: 32px;
+    margin: 8px;
+    flex-basis: calc(33% - 20px);
+    flex-grow: 1;
+    border: 1px solid #111;
+    transition: 1s all ease;
+    background-color: #151515;
+    height: auto;
+}
 
+.ArticleClass  h3{
+    font-size: 27px;
+    font-weight: 400;
+}
 
+.ArticleClass p {
+    margin: 24px 0px;
+    color: #9ca3af;
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.ArticleClass a{
+    color: #986dff;
+    position: relative;
+    font-size: 19px;
+
+}
+
+.patinhasfelizes{
+    border: 1px solid #e1fe94;
+}
+
+.patinhasfelizes a {
+    color: #e1fe94;
+}
+
+.construtoraNiemaia{
+    border: 1.2px solid #e74011;
+}
+
+.construtoraNiemaia a {
+    color: #e74011;   
+}
+
+.BritoSimoes{
+    border: 1.2px solid #1a60cb;
+}
+
+.BritoSimoes a{
+    color: #1a60cb;
+}
 
 
 
@@ -342,6 +408,9 @@ main{
 }
 
 @media (max-width: 500px){
+    .ArticleClass{
+        flex-basis: calc(100% - 10px);
+    }
     .s-home__container-text h1, .s-home__container-text p{
         text-align: center;
     }
