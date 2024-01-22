@@ -88,33 +88,22 @@ header{
     color: var(--color-white);
 }
 
+.nav__items  a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
 .nav__items a::after{
 content: "";
 position: absolute;
-width: 0;
-transform: scaleX(1);
+width: 100%;
+transform: scaleX(0);
 height: 1px;
 bottom: -7px;
 left: 0;
 background: linear-gradient(270deg, var(--color-primary) 0%, #17161d 100%);
 transform-origin: bottom right;
-transition: width .5s cubic-bezier(0.86, 0, 0.07, 1);
-}
-
-.nav__items  a:hover::after {
-    width: 100%; /* Alterado para 100% ao passar o mouse */
-}
-
-@keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(100px)
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0)
-    }
+transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 /* ---- main ---- */
@@ -310,7 +299,7 @@ main{
 
 
 .ArticleClass{
-    
+    position: relative;
     height: auto;
     padding: 32px;
     margin: 8px;
@@ -320,11 +309,13 @@ main{
     transition: 1s all ease;
     background-color: #151515;
     height: auto;
-}
-
-.card-top{
     visibility: hidden;
 }
+
+/* .card-top{
+    visibility: hidden;
+} */
+
 .ArticleClass  h3{
     font-size: 27px;
     font-weight: 400;

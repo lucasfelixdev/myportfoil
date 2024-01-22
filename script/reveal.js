@@ -1,35 +1,38 @@
 window.revelar = ScrollReveal({
-    reset:true
+    reset:false // True para animação repetir.
 })
 
-// CARDS PROJETOS
+const duracao = 900; // Define duração das animações
+const distancia = '80px';   // Define distância inicial da animação.
+
 revelar.reveal('.card-top', 
 {
-    duration: 2500,
-    distance: '80px',
-    origin: 'top'
+    duration: duracao,
+    distance: distancia,
+    origin: 'top',
+    
 })
 
 revelar.reveal('.card-top1', 
 {
-    duration: 2500,
-    distance: '80px',
+    duration: duracao,
+    distance: distancia,
     delay: 100,
     origin: 'top'
 })
 
 revelar.reveal('.card-top2', 
 {
-    duration: 2500,
-    distance: '80px',
+    duration: duracao,
+    distance: distancia,
     delay: 200,
     origin: 'top'
 })
 
 revelar.reveal('.card-top3', 
 {
-    duration: 2500,
-    distance: '80px',
+    duration: duracao,
+    distance: distancia,
     delay: 300,
     origin: 'top'
 })
