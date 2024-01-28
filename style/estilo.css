@@ -7,11 +7,16 @@
     --color-white: #ffffff;
     --color-whitegray: #a9a9a9;
     --color-whitegray2: rgb(33, 33, 33);
+    --color-scroll: #444444;
     --tamanho-max: 1140px;
 }
 
 html{
     scroll-behavior: smooth;
+}
+
+html, body, #s-home, #s-about, #s-projects{
+    overflow-x: hidden;
 }
 
 *{
@@ -23,7 +28,7 @@ h1,h2,h3,h4{
     margin: 0;
 }
 body{
-    overflow-x: hidden;
+    
     font-family: 'Outfit', sans-serif;
     font-weight: 400;
     background-color: var(--CorBackground-Primay);
@@ -32,11 +37,11 @@ body{
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--color-primary);
+    background-color: var(--color-scroll);
     border-radius: 8px;
 }
 
@@ -74,6 +79,20 @@ header{
     gap: 30px;
     list-style: none;
 }
+
+.nav__items li{
+    opacity: 0;
+}
+@keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
 .nav__items a {
     position: relative;
@@ -378,7 +397,15 @@ main{
     }
 }
 
-@media (max-width: 1345px) {
+@media (max-width: 1147px) {
+
+    .s-home__container-text h1{
+        text-shadow:4px -1px 9px rgba(0,0,0,1);
+    }
+}
+
+
+@media (max-width: 980px) {
     .logoStroke{
         display: none;
     }
@@ -434,12 +461,13 @@ main{
         height: 23.3px; 
      }
 
-     .container__responsividade.on{
+     .container__responsividade.on
+     {
+        
         transition: 0.8s ease-in-out;
         position: absolute;
         top:0;
         left:0;
-        
         width: 100vw;
         height: 100vh;
 
@@ -452,7 +480,7 @@ main{
         align-items: center;
     }
 
-    .container__responsividade.on nav {
+    .container__responsividade.on nav{
         display: block;
     }
 
