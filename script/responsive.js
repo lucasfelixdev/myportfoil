@@ -1,4 +1,4 @@
-document.oncontextmenu = document.body.oncontextmenu = function() {return false;}
+// document.oncontextmenu = document.body.oncontextmenu = function() {return false;}
 
 let show = true;
 const menuSection = document.querySelector(".container__responsividade");
