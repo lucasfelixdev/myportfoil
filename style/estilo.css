@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root{
-    --CorBackground-Primay: rgb(20, 20, 20);
+    --CorBackground-Primay: rgb(13, 13, 13);
     --color-primary: #00f0c8;
     --color-secundary: #10737a;
     --color-white: #ffffff;
@@ -15,7 +15,7 @@ html{
     scroll-behavior: smooth;
 }
 
-html, body, #s-home, #s-about, #s-projects{
+html, body, #s-about, #s-projects{
     overflow-x: hidden;
 }
 
@@ -159,13 +159,14 @@ main{
 }
 
 .diamond.d1{
+    filter: blur(0.5px);
     z-index: 9;
     top: 17%;
     right: 0;
     height: 150px;
     transition: ease-in-out 0.8s;
     animation: float 7.1s ease-in-out infinite;
-    animation-delay: 1.5s;
+    animation-delay: 1.6s;
 }
 
 .diamond.d1:hover{
@@ -175,7 +176,7 @@ main{
 
 .diamond.d2{
     z-index: 9;
-    bottom: 13%;
+    bottom: 3%;
     right: 35%;
     transition: ease-in-out 0.8s;
     animation: float 6s ease-in-out infinite;
@@ -189,10 +190,11 @@ main{
 }
 
 .diamond.d3{ 
+    filter: blur(2px);
     height: 90px;
     z-index: 9;
-    top: 18%;
-    left: 1%;
+    top: 12%;
+    right: 30%;
     transition: ease-in-out 0.8s;
     animation: float 5s ease-in-out infinite;
     animation-delay: 0.9s;
@@ -250,14 +252,16 @@ main{
 }
 
 .logoStroke {
+    z-index: 98;
+    overflow: hidden;
     position: absolute;
     right: 0;
     animation: float 5s ease-in-out infinite;
-    /* top: 48%; */
-    /* transform: translate(0%, -38%); */
+    top: 7%;
    
 }
 .logoStroke img{
+    overflow:hidden;
     height: 600px;
 }
 
@@ -478,6 +482,9 @@ main{
     .logoStroke{
         display: none;
     }
+    .diamond.d1{top: 18%;right: -101px;}
+    .diamond.d2{bottom: -30%;right: 38%;z-index: 0;}
+    .diamond.d3{top: 26%;left: -18%;}
 
     .container__home{
        justify-content: center; 
