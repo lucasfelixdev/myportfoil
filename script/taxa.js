@@ -3,6 +3,7 @@ const decreaseButton = document.getElementById('decrease');
 const display = document.getElementById('display');
 const inputAmount = document.getElementById('amount');
 const finalAmountDisplay = document.getElementById('finalAmount');
+const valorParcela = document.getElementById('parcela');
 
 let parcela = 1;
 const maxParcelas = 12;
@@ -24,6 +25,8 @@ const rates = [
 function updateDisplay() {
     const rate = rates[parcela - 1];
     display.textContent = `${parcela}x (credito ${rate.displayRate}%)`;
+
+    
     updateFinalAmount();
 }
 
@@ -35,12 +38,18 @@ function updateFinalAmount() {
     const finalAmount = amount * (1 + interestRate);
 
     finalAmountDisplay.textContent = `R$ ${finalAmount.toFixed(2)}`;
+   
+    const v1 = finalAmount / parcela;
+    console.log(v1)
+    valorParcela.textContent = `R$ ${v1.toFixed(2)}`;
+   
 }
 
 increaseButton.addEventListener('click', () => {
     if (parcela < maxParcelas) {
         parcela++;
         updateDisplay();
+        
     }
 });
 
@@ -50,6 +59,7 @@ decreaseButton.addEventListener('click', () => {
         updateDisplay();
     }
 });
+
 
 inputAmount.addEventListener('input', updateFinalAmount);
 
